@@ -17,19 +17,6 @@
   vol_roi = select_roi(vol);
   vol = vol_roi;
   
-%   disp('Displaying the slices of the volume');
-%   n_fig = 1;
-%   disp_vol_slices(vol,n_fig);  
-%   disp('Display of the slices Over, Eneter to continue'); pause;
-  
-%   maxx = max(max(max(double(vol))));
-%   nbins = 1:maxx;
-%   hist_vol = hist(double(vol(:)), nbins); 
-%   n_fig = 2; 
-%   figure(n_fig); plot(hist_vol);  grid;
-%   
-%   disp('Check Histogram, and Enter to continue'); pause; 
-  
 % Projection routine
   n_fig = 3;
   projection_cb(vol, D, phi_deg, theta_deg, psi_deg,n_fig);
@@ -93,18 +80,8 @@
   projection_cb(vol, D, phi_deg, theta_deg, psi_deg,n_fig);
   title('Projection of the Binary Volume - 45 deg');
   disp('Proj. of Binary Vol. - Enter to Continue'); pause;
-  
-% Counting the DNA double-strand breaks
-  disp('Counting the blobs');
-  [L, num_foci] = bwlabeln(vol);
-  disp(['num_foci = ', num2str(num_foci)]);
-  disp('Foci counting done - Enter to continue'); pause;
 
   n_fig = 100; 
   D = 1000000; 
   gap_disp = 0.00005; gap_ang = 1;
   disp_movie(vol, D, phi_deg, gap_ang,gap_disp,n_fig);
-  
-  
-  
-  
